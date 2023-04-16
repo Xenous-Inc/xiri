@@ -1,0 +1,44 @@
+{
+  "name": "xiri",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Xenous-Inc/xiri.git",
+  "license": "MIT",
+  "scripts": {
+    "dev": "NODE_ENV=DEV DOTENV_CONFIG_PATH=.env.dev ts-node -r dotenv/config -r tsconfig-paths/register ./src/index.ts",
+    "watch": "nodemon",
+    "prod": "npx tsc && NODE_ENV=PROD DOTENV_CONFIG_PATH=.env.prod TS_NODE_BASEURL=./dist node -r dotenv/config -r tsconfig-paths/register ./dist/src/index.js",
+    "lint": "eslint --cache --fix .",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "@types/node": "^18.15.11",
+    "@typescript-eslint/eslint-plugin": "^5.58.0",
+    "@typescript-eslint/parser": "^5.58.0",
+    "babel-plugin-module-resolver": "^5.0.0",
+    "eslint": "^8.38.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-import-resolver-babel-module": "^5.3.2",
+    "eslint-import-resolver-typescript": "^3.5.5",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-module-resolver": "^1.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-unused-imports": "^2.0.0",
+    "husky": "^8.0.0",
+    "lint-staged": ">=10",
+    "nodemon": "^2.0.22",
+    "prettier": "^2.8.7",
+    "ts-node": "^10.9.1",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.0.4"
+  },
+  "dependencies": {
+    "@babel/core": "^7.21.4",
+    "@babel/node": "^7.20.7",
+    "@babel/preset-env": "^7.21.4",
+    "dotenv": "^16.0.3"
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx}": "eslint --cache --fix"
+  }
+}

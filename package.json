@@ -1,7 +1,7 @@
 {
   "name": "xiri",
   "description": "Powerful logger with stream support for Node.js",
-  "author": "Xenous Inc"
+  "author": "Xenous Inc",
   "maintainers": [
     "Alexandr Drednought <ask@dr3dnought.ru>",
     "Artem x3noku <x3noku@gmail.com>",

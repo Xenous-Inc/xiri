@@ -1,12 +1,28 @@
-import { DateTimeLayer } from './layers/datetime.layer';
-import { DateTimeType } from './types';
+import { ILayer } from './types';
 
-export class XiriLogger {
+export class XiriBuidler {
+    private layers: ILayer[] = [];
+
+    addLayer(layer: ILayer): XiriBuidler {
+        this.layers.push(layer);
+
+        return this;
+    }
+
+    build(): XiriLogger {
+        return new XiriLogger(this.layers);
+    }
+}
+
+class XiriLogger {
+    constructor(private readonly layers: ILayer[]) {}
+
     print(str: string) {
-        const o = new DateTimeLayer({
-            dateTimeType: DateTimeType.Epoch,
-            prefix: 'dr3dnought',
+        let preStr = '';
+        this.layers.forEach(e => {
+            preStr += e.buildString() + ' ';
         });
-        console.log(o.buildString());
+
+        console.log(`${preStr}${str}`);
     }
 }

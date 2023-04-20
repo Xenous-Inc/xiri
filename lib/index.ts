@@ -1,6 +1,14 @@
-import { XiriLogger } from './logger';
-import { Colorize, DefaultColor } from './utils/colorizer';
+import { DateTimeLayer } from './layers/datetime.layer';
+import { XiriBuidler } from './logger';
+import { DateTimeType } from './types';
 
-const logger = new XiriLogger();
-logger.print('Hello, Its Xiri - Modern JS Logger');
-console.log(Colorize('Papapap', { isBold: true, isItalic: true, isUnderlined: true, color: DefaultColor.White }));
+const logger = new XiriBuidler()
+    .addLayer(
+        new DateTimeLayer({
+            dateTimeType: DateTimeType.Iso,
+            prefix: 'dr3dnought',
+        }),
+    )
+    .build();
+
+logger.print('Hello, Its Xiri');

@@ -43,7 +43,10 @@
     "@babel/core": "^7.21.4",
     "@babel/node": "^7.20.7",
     "@babel/preset-env": "^7.21.4",
-    "dotenv": "^16.0.3"
+    "chalk": "4.1.2",
+    "dotenv": "^16.0.3",
+    "figures": "^5.0.0",
+    "node-emoji": "^1.11.0"
   },
   "lint-staged": {
     "*.{js,ts,tsx}": "eslint --cache --fix"
